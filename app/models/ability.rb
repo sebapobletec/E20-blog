@@ -12,8 +12,6 @@ class Ability
       can :destroy, Post
       can :destroy, Comment
       can :destroy, User
-
-
     else
       can :destroy, Post, user_id: user.id
       can :destroy, Comment, user_id: user.id
