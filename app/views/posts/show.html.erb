@@ -23,12 +23,12 @@
 				</div>
 				<%= f.submit 'Comentar', class: 'btn btn-primary' %>
 			<% end %>
-			  
+
 		</div>
 	</div>
 	<div class="col-md-8">
 		<% counter = 0 %>
-		<% @comments.each do |comment| %>
+		<% @comments.order(:created_at).each do |comment| %>
 			#<%= counter += 1 %>
 			<div class="well well-sm">
 				<strong><%= comment.user.name %>:</strong>
