@@ -10,8 +10,11 @@ class Ability
     if user.admin?
       can :manage, :all
       can :destroy, Post
+      can :destroy, Comment
+
     else
       can :destroy, Post, user_id: user.id
+      can :destroy, Comment, user_id: user.id
       can :create, Post
       can :create, Comment
       can :read, :all
