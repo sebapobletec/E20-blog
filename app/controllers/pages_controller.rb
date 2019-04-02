@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  def dashboard
+
+  def index
     @users = User.all
   end
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'pages/dashboard'
+  get 'pages/index'
 
 	resources :posts do
 		resources :comments, only: [:create, :destroy]

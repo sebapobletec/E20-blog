@@ -11,13 +11,18 @@ class Ability
       can :manage, :all
       can :destroy, Post
       can :destroy, Comment
+      can :destroy, User
+
 
     else
       can :destroy, Post, user_id: user.id
       can :destroy, Comment, user_id: user.id
+      can :update, Post, user_id: user.id
+      can :update, Comment, user_id: user.id
       can :create, Post
       can :create, Comment
-      can :read, :all
+      can :read, Post
+      can :read, Comment
     end
     #
     # The first argument to `can` is the action you are giving the user
