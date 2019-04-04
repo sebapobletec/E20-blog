@@ -9,11 +9,11 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.order(:name).each do |user| %>
       <tr>
         <td><%= user.name %></td>
         <td><%= user.role %></td>
-        <td><%= link_to 'Change role', edit_user_path(user), class: 'btn btn-sm btn-success' %></td>
+        <td><%= link_to 'Change role',user, method: :patch, class: 'btn btn-sm btn-success' %></td>
         <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Estás seguro que deseas eliminar el usuario?' }, class: 'btn btn-sm btn-danger' %></td>
       </tr>
     <% end %>
